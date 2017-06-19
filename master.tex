@@ -32,6 +32,15 @@
 % Or whatever. Note that the encoding and the font should match. If T1
 % does not look nice, try deleting the line with the fontenc.
 \usepackage{helvet}
+\usepackage{enumitem}
+\usepackage{pifont}
+\setlist[itemize,1]{label={\ding{227}}}
+\setlist[itemize,2]{label={\scriptsize \ding{226}}}
+\setlist[itemize,3]{label={\scriptsize \ding{217}}}
+
+\makeatletter
+\let\@minipagerestore=\raggedright
+\makeatother
 
 % colored hyperlinks
 \newcommand{\chref}[2]{%
@@ -91,7 +100,7 @@
 \tableofcontents
 \end{frame}
 %%%%%%%%%%%%%%%%
-
+\raggedright
 %%%%%%%%%%
 % Inputs %
 %%%%%%%%%%
@@ -99,6 +108,7 @@
 
 \newpage
 \input{slides/intro}
+\input{slides/project}
 \input{slides/f-secure}
 
 \end{document}

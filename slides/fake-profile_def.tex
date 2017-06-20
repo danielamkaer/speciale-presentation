@@ -1,0 +1,28 @@
+\subsection{Restart Learning Phase}
+\begin{frame}{Attacks}{Restart Learning Phase}
+\textbf{Defence}
+\begin{itemize}
+	\item Prevent IP spoofing
+	\begin{itemize}
+		\item Lock IP address to MAC address
+		\begin{itemize}
+			\item \texttt{iptables -A FORWARD -s <IP> -m mac ! -{}-mac-source <MAC> -j DROP}
+		\end{itemize}
+		\item Learn relation from DHCP lease
+		\begin{itemize}
+			\item Use dnsmasq hook \texttt{dhcp-script}
+		\end{itemize}
+	\end{itemize}
+	\item Prevent MAC spoofing
+	\begin{itemize}
+		\item Unique WPA password per MAC address
+		\begin{itemize}
+			\item Use hostapd \texttt{wpa\_psk\_file}
+		\end{itemize}
+		\item Lock LAN port to MAC address
+		\begin{itemize}
+			\item \texttt{interface g0/1 \\ switchport port-security mac-address <MAC>} 
+		\end{itemize}
+	\end{itemize}
+\end{itemize}	
+\end{frame}

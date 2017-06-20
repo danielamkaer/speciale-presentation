@@ -32,11 +32,11 @@
 % Or whatever. Note that the encoding and the font should match. If T1
 % does not look nice, try deleting the line with the fontenc.
 \usepackage{helvet}
-\usepackage{enumitem}
 \usepackage{pifont}
-\setlist[itemize,1]{label={\ding{227}}}
-\setlist[itemize,2]{label={\scriptsize \ding{226}}}
-\setlist[itemize,3]{label={\scriptsize \ding{217}}}
+\setbeamertemplate{itemize item}{\ding{226}}
+\setbeamertemplate{itemize subitem}{\footnotesize\raise0.0pt\hbox{\ding{227}}}
+\setbeamertemplate{itemize subsubitem}{\scriptsize\raise0.0pt\hbox{\ding{227}}}
+
 
 \makeatletter
 \let\@minipagerestore=\raggedright
@@ -109,7 +109,14 @@
 \newpage
 \input{slides/intro}
 \input{slides/project}
-\input{slides/f-secure}
+\section{Attacks}
+\input{slides/vm}
 \input{slides/fake-profile}
+\section{Defence}
+\input{slides/vm_def}
+\input{slides/fake-profile_def}
+\input{slides/demo}
+\input{slides/f-secure}
+\input{slides/guidelines}
 
 \end{document}
